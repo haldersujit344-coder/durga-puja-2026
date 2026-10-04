@@ -1,1 +1,372 @@
-# durga-puja-2026
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>শারদীয়া দুর্গোৎসব ২০২৬</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;800&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Hind Siliguri', 'Anek Bangla', sans-serif;
+    }
+    body {
+      background: linear-gradient(rgba(20, 5, 3, 0.78), rgba(20, 5, 3, 0.90)), 
+                  url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Durga_Puja_Kolkata_2019.jpg/1200px-Durga_Puja_Kolkata_2019.jpg') center/cover fixed no-repeat;
+      background-color: #1a0604;
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 20px 14px 60px;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .header-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 215, 0, 0.45);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 22px;
+      backdrop-filter: blur(8px);
+    }
+    h1 {
+      color: #ffd700;
+      font-size: 24px;
+      font-weight: 800;
+    }
+    .sub-greeting {
+      font-size: 14px;
+      color: #fed7aa;
+      margin-top: 6px;
+    }
+    .card {
+      background: rgba(28, 15, 10, 0.88);
+      border: 1px solid rgba(255, 69, 0, 0.4);
+      border-radius: 16px;
+      padding: 24px 18px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(10px);
+    }
+    .timer-title {
+      font-size: 19px;
+      color: #facc15;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .timer-subtitle {
+      font-size: 13px;
+      color: #fed7aa;
+      margin-bottom: 14px;
+    }
+    .timer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .time-box {
+      background: rgba(220, 38, 38, 0.28);
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      padding: 12px 4px;
+      border-radius: 10px;
+    }
+    .time-val {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fef08a;
+      display: block;
+    }
+    .time-label {
+      font-size: 13px;
+      color: #ffedd5;
+    }
+    .dhak-btn {
+      background: #b91c1c;
+      color: #ffffff;
+      border: 1px solid #ffd700;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin: 14px 0 6px;
+    }
+    .dhak-btn:active {
+      background: #991b1b;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid #ffd700;
+      margin-top: 15px;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .section-title {
+      font-size: 21px;
+      color: #ffd700;
+      margin: 30px 0 18px;
+      font-weight: 800;
+    }
+    .pandal-card {
+      background: rgba(35, 18, 12, 0.90);
+      border-left: 4px solid #dc2626;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .pandal-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fef08a;
+      margin-bottom: 6px;
+    }
+    .pandal-loc {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      margin-bottom: 5px;
+    }
+    .pandal-theme {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fdba74;
+      margin-bottom: 8px;
+    }
+    .pandal-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #f1f5f9;
+      margin-bottom: 12px;
+    }
+    .map-link {
+      display: inline-block;
+      background: #b91c1c;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12.5px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 215, 0, 0.4);
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- আসল ঢাকের অডিও -->
+  <audio id="dhak-audio" preload="auto">
+    <source src="https://cdn.freesound.org/previews/407/407981_7856417-lq.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+
+    <div class="header-box">
+      <h1>শারদীয়ার প্রীতি ও শুভেচ্ছা ২০২৬</h1>
+      <div class="sub-greeting">মা আসছেন ঘরে, সাজো সাজো রব বাংলায়</div>
+    </div>
+
+    <div class="card" id="countdown-card">
+      <div class="timer-title">মহালয়া আগমনের বাকি</div>
+      <div class="timer-subtitle">১০ অক্টোবর ২০২৬, ভোর ৪ টা</div>
+
+      <div class="timer-grid">
+        <div class="time-box">
+          <span class="time-val" id="days">০</span>
+          <span class="time-label">দিন</span>
+        </div>
+        <div class="time-box">
+          <span class="time-val" id="hours">০</span>
+          <span class="time-label">ঘণ্টা</span>
+        </div>
+        <div class="time-box">
+          <span class="time-val" id="mins">০</span>
+          <span class="time-label">মিনিট</span>
+        </div>
+        <div class="time-box">
+          <span class="time-val" id="secs">০</span>
+          <span class="time-label">সেকেন্ড</span>
+        </div>
+      </div>
+
+      <div>
+        <button class="dhak-btn" onclick="playRealDhak()">ঢাক বাজান</button>
+      </div>
+    </div>
+
+    <!-- মহালয়ার ভোর ৪:০০ টায় এটি নিজে থেকে দৃশ্যমান হবে -->
+    <div class="card hidden" id="video-card">
+      <h2 style="color: #ffd700; font-size: 18px; margin-bottom: 6px;">শুভ মহালয়া</h2>
+      <div class="timer-subtitle">মায়ের চক্ষুদান পর্ব</div>
+      
+      <div class="video-wrapper">
+        <iframe id="eye-video" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="section-title">কলকাতার সেরা ১০টি দুর্গাপূজা</div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">১. শ্রীভূমি স্পোর্টিং ক্লাব</div>
+      <div class="pandal-loc">অবস্থান: লেক টাউন, ভিআইপি রোড।</div>
+      <div class="pandal-theme">এই বছরের থিম: রাজকীয় প্রাসাদের আদলে মণ্ডপ ও চন্দননগরের বিশেষ আলোকসজ্জা।</div>
+      <div class="pandal-desc">বিবরণ: শ্রীভূমির পুজো প্রতি বছরই তাদের চোখধাঁধানো বিশাল বাজেট, সুবিশাল মণ্ডপ এবং দেবীর আসল সোনার গহনার জন্য বিখ্যাত। দূর-দূরান্ত থেকে মানুষ এখানে ভিড় জমান।</div>
+      <a href="https://maps.google.com/?q=Sreebhumi+Sporting+Club+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">২. সন্তোষ মিত্র স্কোয়ার</div>
+      <div class="pandal-loc">অবস্থান: লেবুতলা পার্ক, সেন্ট্রাল কলকাতা (মহাত্মা গান্ধী রোড ও শিয়ালদহের কাছে)।</div>
+      <div class="pandal-theme">এই বছরের থিম: আধুনিক প্রযুক্তি ও জাতীয় ঐতিহ্যভিত্তিক ডিজিটাল উপস্থাপনা।</div>
+      <div class="pandal-desc">বিবরণ: অত্যাধুনিক লাইটিং, লেজার শো এবং ডিজিটাল এফেক্টসের সমন্বয়ে তাদের থিম ফুটিয়ে তোলার জন্য এই পুজো অত্যন্ত জনপ্রিয়। মধ্য কলকাতার অন্যতম প্রধান আকর্ষণ।</div>
+      <a href="https://maps.google.com/?q=Santosh+Mitra+Square+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">৩. বাগবাজার সর্বজনীন দুর্গোৎসব</div>
+      <div class="pandal-loc">অবস্থান: বাগবাজার, উত্তর কলকাতা (বাগবাজার লঞ্চঘাট ও শ্যামবাজারের কাছাকাছি)।</div>
+      <div class="pandal-theme">এই বছরের থিম: সাবেকিয়ানা ও সনাতনী ঐতিহ্য।</div>
+      <div class="pandal-desc">বিবরণ: কলকাতার অন্যতম প্রাচীন ও ঐতিহ্যবাহী সার্বজনীন পুজো। এখানে কোনো কৃত্রিম আধুনিক থিম নয়, বরং একচালার অপরূপ ডাকের সাজের প্রতিমা এবং বনেদি বাঙালিয়ানা দেখার জন্য মানুষের ঢল নামে।</div>
+      <a href="https://maps.google.com/?q=Baghbazar+Sarbojanin+Durgotsav+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">৪. কলেজ স্কয়ার</div>
+      <div class="pandal-loc">অবস্থান: কলেজ স্ট্রিট, সেন্ট্রাল কলকাতা (কলকাতা বিশ্ববিদ্যালয়ের বিপরীতে)।</div>
+      <div class="pandal-theme">এই বছরের থিম: জলাশয়ের ওপর আলোর প্রতিফলন ও সুবিশাল স্থাপত্যশৈলী।</div>
+      <div class="pandal-desc">বিবরণ: কলেজ স্কয়ারের মূল আকর্ষণ হলো সুইমিং পুলের চারপাশ ঘিরে তৈরি বিশাল মণ্ডপ এবং জলের ওপর চন্দননগরের আলোর অসাধারণ প্রতিবিম্ব। রাতে এই দৃশ্য এক অনন্য রূপ ধারণ করে।</div>
+      <a href="https://maps.google.com/?q=College+Square+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">৫. মহম্মদ আলি পার্ক</div>
+      <div class="pandal-loc">অবস্থান: সেন্ট্রাল এভিনিউ, এম.জি রোড ক্রসিংয়ের কাছে।</div>
+      <div class="pandal-theme">এই বছরের থিম: প্রাচীন ভারতীয় মন্দির স্থাপত্যশৈলী।</div>
+      <div class="pandal-desc">বিবরণ: প্রতি বছরই দেশের বিভিন্ন ঐতিহাসিক মন্দির বা স্থাপত্যের নিখুঁত প্রতিরূপ তৈরি করে এরা নজর কাড়ে। শহরের একেবারে কেন্দ্রস্থলে হওয়ায় দর্শনার্থীদের অন্যতম প্রধান গন্তব্য।</div>
+      <a href="https://maps.google.com/?q=Mohammad+Ali+Park+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">৬. সুরুচি সংঘ</div>
+      <div class="pandal-loc">অবস্থান: নিউ আলিপুর, দক্ষিণ কলকাতা।</div>
+      <div class="pandal-theme">এই বছরের থিম: সাংস্কৃতিক ঐতিহ্য ও গ্রামীণ ভারতের শিল্পকলা।</div>
+      <div class="pandal-desc">বিবরণ: সুরুচি সংঘ সাধারণত ভারতবর্ষের বিভিন্ন রাজ্যের সংস্কৃতি ও লোকশিল্পকে তাদের মণ্ডপে ফুটিয়ে তোলে। তাদের আবহসংগীত ও পরিবেশবান্ধব শিল্পকর্ম খুবই প্রশংসিত হয়।</div>
+      <a href="https://maps.google.com/?q=Suruchi+Sangha+New+Alipore+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">৭. একডালিয়া এভারগ্রিন</div>
+      <div class="pandal-loc">অবস্থান: গড়িয়াহাট, দক্ষিণ কলকাতা।</div>
+      <div class="pandal-theme">এই বছরের থিম: ভারতের প্রাচীন মন্দির স্থাপত্য এবং সনাতনী প্রতিমা।</div>
+      <div class="pandal-desc">বিবরণ: দক্ষিণ কলকাতার ঐতিহ্যবাহী পুজোগুলির শীর্ষে থাকে একডালিয়া। মণ্ডপের ভেতরে ঝাড়বাতি, সাবেকি প্রতিমা এবং বাইরের চমৎকার ঝাড়লণ্ঠন ও আলোর কারুকাজ এদের বিশেষ বৈশিষ্ট্য।</div>
+      <a href="https://maps.google.com/?q=Ekdalia+Evergreen+Club+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">৮. নাকতলা উদয়ন সংঘ</div>
+      <div class="pandal-loc">অবস্থান: নাকতলা, গড়িয়া, দক্ষিণ কলকাতা।</div>
+      <div class="pandal-theme">এই বছরের থিম: সমকালীন সমাজভাবনা ও আধুনিক ইনস্টলেশন আর্ট।</div>
+      <div class="pandal-desc">বিবরণ: দক্ষিণ কলকাতার অন্যতম ক্রিয়েটিভ ও ব্যতিক্রমী থিম পুজো। গভীর সামাজিক বার্তা এবং নিখুঁত শিল্প নির্দেশনার কারণে এই মণ্ডপটি সবসময় আলোচনার কেন্দ্রে থাকে।</div>
+      <a href="https://maps.google.com/?q=Naktala+Udayan+Sangha+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">৯. ত্রিধারা সম্মিলনী</div>
+      <div class="pandal-loc">অবস্থান: মনোহরপুকুর রোড, রাসবিহারী অ্যাভিনিউ ও দেশপ্রিয় পার্কের কাছে।</div>
+      <div class="pandal-theme">এই বছরের থিম: লোকশিল্প ও সমসাময়িক ভাবনার মেলবন্ধন।</div>
+      <div class="pandal-desc">বিবরণ: অত্যন্ত সৃজনশীল পরিকল্পনা ও নান্দনিক রূপায়নের জন্য ত্রিধারা পরিচিত। ছোট পরিসরে হলেও তাদের প্রতিমা ও মণ্ডপসজ্জা দর্শকদের ভীষণভাবে আকৃষ্ট করে।</div>
+      <a href="https://maps.google.com/?q=Tridhara+Sammilani+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+    <div class="pandal-card">
+      <div class="pandal-name">১০. চেতলা অগ্রণী</div>
+      <div class="pandal-loc">অবস্থান: চেতলা, দক্ষিণ কলকাতা (কালীঘাট মেট্রো থেকে কাছে)।</div>
+      <div class="pandal-theme">এই বছরের থিম: পরিবেশবান্ধব উপকরণে লোকসংস্কৃতি ও আধ্যাত্মিক আবহ।</div>
+      <div class="pandal-desc">বিবরণ: শিল্পীভাবনার সূক্ষ্ম কাজ এবং অপূর্ব প্রতিমা তৈরির ক্ষেত্রে চেতলা অগ্রণী বারবার সেরা পুরস্কার অর্জন করেছে। এখানে প্রবেশ করলেই এক শান্ত ও শৈল্পিক পরিবেশ অনুভূত হয়।</div>
+      <a href="https://maps.google.com/?q=Chetla+Agrani+Club+Kolkata" target="_blank" class="map-link">লাইভ লোকেশন</a>
+    </div>
+
+  </div>
+
+  <script>
+    // মহালয়া ২০২৬ এর সময়: ১০ অক্টোবর ২০২৬, ভোর ৪:০০ AM IST
+    const targetDate = new Date("October 10, 2026 04:00:00").getTime();
+    const bengaliDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+
+    function toBengaliNum(n) {
+      return n.toString().split('').map(d => bengaliDigits[parseInt(d)] || d).join('');
+    }
+
+    // মায়ের চক্ষুদান ভিডিও (YouTube embed allow করা ভিডিও)
+    const eyeVideoUrl = "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"; 
+
+    function unlockMahalayaVideo() {
+      const vidCard = document.getElementById("video-card");
+      const iframe = document.getElementById("eye-video");
+      if (vidCard.classList.contains("hidden")) {
+        vidCard.classList.remove("hidden");
+        iframe.src = "https://www.youtube.com/embed/50g3b_9EwhU?autoplay=1";
+        vidCard.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      // ভোর ৪:০০ বেজে গেলে ও কাউন্টডাউন শেষ হলেই ভিডিও দৃশ্যমান হবে
+      if (diff <= 0) {
+        document.getElementById("days").innerText = "০";
+        document.getElementById("hours").innerText = "০";
+        document.getElementById("mins").innerText = "০";
+        document.getElementById("secs").innerText = "০";
+        unlockMahalayaVideo();
+        clearInterval(timerInterval);
+      } else {
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = toBengaliNum(d);
+        document.getElementById("hours").innerText = toBengaliNum(h);
+        document.getElementById("mins").innerText = toBengaliNum(m);
+        document.getElementById("secs").innerText = toBengaliNum(s);
+      }
+    }
+
+    const timerInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // আসল ঢাক বাজানোর ফাংশন
+    function playRealDhak() {
+      const audio = document.getElementById("dhak-audio");
+      audio.currentTime = 0;
+      audio.play().catch(function(e) {
+        console.log("Audio play error: ", e);
+      });
+    }
+  </script>
+</body>
+</html>
